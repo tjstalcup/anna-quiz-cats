@@ -54,37 +54,34 @@ $(document).ready(function() {
 	});
 
 	$('ul').on('click', 'li', function() {
-		$('li').remove();
-		if (currentQuestionIndex < 4) {
+			$('li').remove();
 			//console.log(questionsAndAnswers[currentQuestionIndex].answer);
 			if ($(this).text() === questionsAndAnswers[currentQuestionIndex].answer) {
 				userScore++;
 			};
 			currentQuestionIndex++;
 			questionNumber++;
-			presentQuestion();
-			$('#progress h3').text("Question " + questionNumber + " of 5");
-			$('#progress h2').text("Current score: " + userScore);
-
-		}
-		else {
-			if ($(this).text() === questionsAndAnswers[currentQuestionIndex].answer) {
-				userScore++;
-			};
-			currentQuestionIndex = 0;
-			$('.question').hide();
-			if (userScore < 3) {
-				$('#gameOver h1').text("Oooooh, burn, y'all should learn more about wild kitties. Your final score is: " + userScore + " out of 5.");
-			}
-			else if (userScore == 3) {
-				$('#gameOver h1').text("Congrats, you know a thing or two about wild kitties. Thanks for playing! Your final score is: " + userScore + " out of 5.");
+			
+			if (currentQuestionIndex < questionsAndAnswers.length) {
+				presentQuestion();
+				$('#progress h3').text("Question " + questionNumber + " of 5");
+				$('#progress h2').text("Current score: " + userScore);
 			}
 			else {
-				$('#gameOver h1').text("Look at you, wild kitty master! Go forth and spread your wisdom! Your final score is: " + userScore + " out of 5.");
-			};
-			$('#progress').hide();
-			$('#gameOver').show();
-			$('#newGameButton').show();
-		}
+				currentQuestionIndex = 0;
+				$('.question').hide();
+				if (userScore < 3) {
+					$('#gameOver h1').text("Oooooh, burn, y'all should learn more about wild kitties. Your final score is: " + userScore + " out of 5.");
+				}
+				else if (userScore == 3) {
+					$('#gameOver h1').text("Congrats, you know a thing or two about wild kitties. Thanks for playing! Your final score is: " + userScore + " out of 5.");
+				}
+				else {
+					$('#gameOver h1').text("Look at you, wild kitty master! Go forth and spread your wisdom! Your final score is: " + userScore + " out of 5.");
+				};
+				$('#progress').hide();
+				$('#gameOver').show();
+				$('#newGameButton').show();
+			}
 	});
 });
