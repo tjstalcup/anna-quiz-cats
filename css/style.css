@@ -1,0 +1,54 @@
+body {
+	text-align: center;
+	background-color: #0AA3BF;
+}
+
+/* .wrapper {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: #033640 solid 10px;
+} */
+
+img {
+	width: 400px;
+	padding: 1px;
+	border: 25px solid #033640;
+	background-color: black;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#gameHolder {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.catImage {
+	display: inline-block;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
+.startGame {
+	padding-top: 120px;
+}
+
+.question, #gameOver, #progress {
+	display: none;
+}
+
+header {
+	padding-bottom: 60px;
+	padding-top: 60px;
+	font-size: larger;
+}
+footer {
+	padding-top: 40px;
+}
